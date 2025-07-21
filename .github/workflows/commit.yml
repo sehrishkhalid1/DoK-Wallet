@@ -122,9 +122,9 @@ jobs:
         run: |
           git config --global user.name "sehrishkhalid1"
           git config --global user.email "dev.sehrishkhalid01@gmail.com"
-          git remote set-url origin https://github.com/sehrishkhalid1/DoK-Wallet.git
+          git remote set-url origin https://github.com/sehrishkhalid1/DoK-Wallet
           git pull origin main --rebase || echo "No changes to pull"
           echo "Updated on $(date)" >> "$FILE_NAME"
           git add "$FILE_NAME"
           git commit -m "$COMMIT_MSG" || echo "No changes to commit"
-          git push https://sehrishkhalid1:${{ secrets.GH_TOKEN }}@github.com/sehrishkhalid1/DoK-Wallet.git
+          git push https://sehrishkhalid1:${{ secrets.GH_TOKEN }}@github.com/sehrishkhalid1/DoK-Wallet
