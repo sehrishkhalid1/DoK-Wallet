@@ -107,6 +107,7 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
+
       - name: Set Random File and Message
         run: |
           messages=("fix: update logs" "feat: add new entry" "docs: update file" "chore: maintenance task" "refactor: improve structure")
@@ -118,13 +119,14 @@ jobs:
           echo "Updated on $(date)" >> "$file_name"
           echo "COMMIT_MSG=$commit_msg" >> $GITHUB_ENV
           echo "FILE_NAME=$file_name" >> $GITHUB_ENV
+
       - name: Commit and Push Changes
         run: |
           git config --global user.name "sehrishkhalid1"
           git config --global user.email "dev.sehrishkhalid01@gmail.com"
           git remote set-url origin https://github.com/sehrishkhalid1/DoK-Wallet
           git pull origin main --rebase || echo "No changes to pull"
-          echo "Updated on $(date)" >> "$FILE_NAME"
           git add "$FILE_NAME"
           git commit -m "$COMMIT_MSG" || echo "No changes to commit"
           git push https://sehrishkhalid1:${{ secrets.GH_TOKEN }}@github.com/sehrishkhalid1/DoK-Wallet
+
