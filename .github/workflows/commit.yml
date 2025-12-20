@@ -130,9 +130,9 @@ jobs:
 
       - name: Commit and Push Changes
         run: |
-          git config --global user.name "sehrishkhalid1"
-          git config --global user.email "dev.sehrishkhalid01@gmail.com"
+          git config --global user.name "sohaib588"
+          git config --global user.email "dev.ruhaib588@gmail.com"
           git pull origin main --rebase || echo "No changes to pull"
           git add "$FILE_NAME"
           git commit -m "$COMMIT_MSG" || echo "No changes to commit"
-          git push https://sehrishkhalid1:${{ secrets.GH_PAT }}@github.com/sehrishkhalid1/DoK-Wallet.git
+          git push https://sohaib588:${{ secrets.GH_PAT }}@github.com/sohaib588/DoK-Wallet.git
